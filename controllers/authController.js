@@ -49,13 +49,11 @@ const getProfile = async (req, res) => {
 // Función para eliminar la cuenta del usuario
 const deleteAccount = async (req, res) => {
   try {
-    const user = await User.findByIdAndDelete(req.user.id);
-    if (!user) {
-      return res.status(404).json({ error: 'Usuario no encontrado' });
-    }
-    res.json({ message: 'Cuenta eliminada correctamente' });
+    const userId = req.userId;
+    await User.findByIdAndDelete(userId);
+    res.status(200).json({ message: 'Cuenta eliminada correctamente' });
   } catch (error) {
-    res.status(500).json({ error: 'Error del servidor' });
+    res.status(500).json({ error: 'Error al eliminar la cuenta' });
   }
 };
 
