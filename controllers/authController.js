@@ -36,13 +36,13 @@ const login = async (req, res) => {
 // Función para obtener el perfil del usuario
 const getProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.user.id);
+    const user = await User.findById(req.userId);
     if (!user) {
       return res.status(404).json({ error: 'Usuario no encontrado' });
     }
     res.json({ username: user.username, email: user.email });
   } catch (error) {
-    res.status(500).json({ error: 'Error del servidor' });
+    res.status(500).json({ error: 'Error al obtener el perfil' });
   }
 };
 
