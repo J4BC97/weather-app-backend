@@ -1,4 +1,4 @@
-// backend/controllers/searchController.js
+
 const SearchHistory = require('../models/SearchHistory');
 
 const saveSearch = async (req, res) => {

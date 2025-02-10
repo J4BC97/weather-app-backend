@@ -4,9 +4,9 @@ const { register, login, getProfile, deleteAccount } = require('../controllers/a
 const authMiddleware = require('../middleware/authMiddleware')
 const router = express.Router();
 
-router.post('/register', register); // Ruta para registrar un usuario
-router.post('/login', login); // Ruta para iniciar sesión
-router.get('/profile', authMiddleware, getProfile); // Ruta para obtener el perfil del usuario
-router.delete('/delete', authMiddleware, deleteAccount); // Ruta para eliminar la cuenta del usuario
+router.post('/register', register);
+router.post('/login', login);
+router.get('/profile', authMiddleware, getProfile);
+router.delete('/delete', authMiddleware, deleteAccount);
 
 module.exports = router;

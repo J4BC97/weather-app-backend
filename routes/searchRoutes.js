@@ -1,4 +1,4 @@
-// backend/routes/searchRoutes.js
+
 const express = require('express');
 const authMiddleware = require('../middleware/authMiddleware');
 const { saveSearch, getSearchHistory } = require('../controllers/searchController');
